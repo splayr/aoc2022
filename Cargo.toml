@@ -11,4 +11,3 @@ lto = true
 strip = true
 
 [dependencies]
-unicode-segmentation = "1"

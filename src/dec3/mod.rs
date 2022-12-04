@@ -9,7 +9,10 @@ pub fn dec3_part_one() {
     let shared_items = check_all_compartiments(compartiments.as_slice());
     let priorities = get_all_priorities(&priority_hashmap, shared_items.as_slice());
 
-    println!("sum of shared items priorities = {}", priorities.iter().sum::<u32>())
+    println!(
+        "sum of shared items priorities = {}",
+        priorities.iter().sum::<u32>()
+    )
 }
 
 pub fn dec3_part_two() {
@@ -20,7 +23,10 @@ pub fn dec3_part_two() {
     let badges = get_all_badges(rucksack_groups.as_slice());
     let priorities = get_all_priorities(&priority_hashmap, badges.as_slice());
 
-    println!("sum of badges priorities = {}", priorities.iter().sum::<u32>())
+    println!(
+        "sum of badges priorities = {}",
+        priorities.iter().sum::<u32>()
+    )
 }
 
 fn get_rucksacks(input: &str) -> Vec<&str> {
@@ -65,10 +71,7 @@ fn get_badge_from_group(rucksack_group: &[&str; 3]) -> char {
 }
 
 fn get_all_badges(rucksack_groups: &[[&str; 3]]) -> Vec<char> {
-    rucksack_groups
-        .iter()
-        .map(get_badge_from_group)
-        .collect()
+    rucksack_groups.iter().map(get_badge_from_group).collect()
 }
 
 fn get_compartiments<'a>(rucksacks: &'a [&str]) -> Vec<(&'a str, &'a str)> {
